@@ -15,8 +15,9 @@ function createDBIni() {
   let utilisateur = $("#utilisateur").val();
   let mdp = $("#mdp").val();
 
-  url = document.location.href;
+  let url = document.location.href;
   console.log(url);
+
   // Test en local
   let url1 = url.replace("index.php", "controllers/createDBIni.php");
 
@@ -30,10 +31,15 @@ function createDBIni() {
     utilisateur: utilisateur,
     mdp: mdp,
   }); /// $.post
-  console.log(host + " / " + port + " / " + utilisateur + " / " + mdp);
+  //console.log(host + " / " + port + " / " + utilisateur + " / " + mdp);
 
   xhr.done(function (data) {
-    console.log(data);
+    if (data != "") {
+      // console.log(data);
+      console.log("Connection OK");
+    } else {
+      console.log("Connection KO");
+    }
   });
 
   xhr.fail((xhr) => {
