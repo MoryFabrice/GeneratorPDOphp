@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Greeva - Responsive Bootstrap 4 Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- jvectormap -->
+    <link href="assets/libs/jqvmap/jqvmap.css" rel="stylesheet" />
+
+    <!-- DataTables -->
+    <link href="assets/libs/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/datatables/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+
+    <!-- App css -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="authentication-bg authentication-bg-pattern d-flex align-items-center">
+
+    <div class="home-btn d-none d-sm-block">
+        <a href="index.html"><i class="fas fa-home h2 text-white"></i></a>
+    </div>
+
+    <div class="account-pages w-100 mt-5 mb-5">
+        <div class="container">
+            <div class="justify-content-center">
+
+                <div class="card-body p-4 text-center justify-content-center">
+
+                    <div class="text-center mb-4">
+                        <h3 class="text-white">Création des fichiers class Métiers, DAO et DATABASE !</h3>
+                    </div>
+                    <div id="formAll" class="text-center mb-4">
+                        <form action="" method="POST">
+                            <div id="slctListeBD" class="form-group" hidden>
+                                <p class="text-white">Veuillez selectionner une des Bases de données :</p>
+                                <select class="form-control w-100" aria-label="multiple select example" name="listeBD" id="listeBD" multiple size="">
+                                </select>
+                            </div>
+                            <div id="divCreateDb" class="form-group mb-3">
+                                <label id="lblCreateDb" for="btnCreateDb" class="text-primary">Voulez vous créer le fichier Database.php de la base sélectionnée?</label>
+                                <br />
+                                <button name="btnCreateDb" class="btn btn-info" type="button" id="btnCreateDb">Oui</button>
+                                <button name="btnNoCreateDb" class="btn btn-danger" type="button" id="btnNoCreateDb">Non</button>
+                                <br />
+                            </div>
+                            <div>
+                                <button type="button" name="btnChoisir" id="btnChoisir" class="btn btn-success"> Choisir </button>
+                                <br>
+                                <label id="lblCreateDbOK" for="btnCreateDb" class="text-danger" hidden></label>
+
+                            </div>
+                            <div id="slctListeTable" class="form-group" hidden>
+                                <p class="text-white">Veuillez sélectionner une table de la Base de donnée :</p>
+                                <select class="form-control w-100" name="listeTable" id="listeTable" multiple="multiple" size="">
+                                </select>
+                            </div>
+                            <div id="createFile" hidden>
+                                <div>
+                                    <input type="radio" id="chkMetier" name="radio" value="metier"><label class="text-primary" id="lblMetier" name="lblMetier" for="chkMetier">Classe métier (DTO)</label>
+                                    <!-- <br> -->
+                                    <input type="radio" id="chkDAO" name="radio" value="DAO"><label class="text-primary" id="lblDAO" name="lblDAO" for="chkDAO">Classe DAO</label>
+                                </div>
+                                <div>
+                                    <button type="button" name="btnValider" id="btnValider" class="btn btn-success"> Valider </button>
+                                    <button type="button" id="btnRetourBD" name="btnRetourBD" class="btn btn-warning">Revenir aux BD</button>
+
+                                </div>
+                            </div>
+                            <br>
+                            <div id="textAreaMessage" hidden>
+                                <p class="text-white">Voici le fichier de class qui sera crée :</p>
+                                <textarea id="pMessage" name="pMessage" class="w-100" style="height: 300px;"></textarea>
+                            </div>
+                            <br />
+                            <br />
+                            <div id="btnChoixCreate" hidden>
+                                <label id="lblMessage" class="text-primary"> Souhaitez-vous crée le fichier ? </label>
+                                <button type="button" id="btnOui" name="btnOui" class="btn btn-success"> Oui </button>
+                                <!-- <button type="button" id="btnNon" name="btnNon" class="btn btn-danger"> Non </button> -->
+                                <button type="button" id="btnRetourTable" name="btnRetourTable" class="btn btn-warning">Revenir aux tables</button>
+                            </div>
+                            <br />
+                            <div id="divValidation" hidden>
+                                <label class="text-primary" id="lblMessageValidation"></label>
+                                <button name="btnRecupFile" class="btn btn-success" type="button" id="btnRecupFile">Oui</button>
+                                <button name="btnNoRecupFile" class="btn btn-danger" type="button" id="btnNoRecupFile">Non</button>
+                            </div>
+                            <div id="recupFile" hidden>
+                                <a id="aRecupFile" href="../dossierClass/class.zip" download>Recuperation du fichier !</a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div> <!-- end card-body -->
+
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end page -->
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/showBD.js"></script>
+
+</body>
+
+</html>
