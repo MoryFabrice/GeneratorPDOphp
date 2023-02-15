@@ -54,7 +54,7 @@ function showBD() {
     $("#listeBD").attr("size", tRecords.length);
 
     // Pour chaque enregistrement, on ajoute une option à la liste.
-    for (let i = 1; i < tRecords.length; i++) {
+    for (let i = 0; i < tRecords.length; i++) {
       let opt = $("<option>");
       opt.val(tRecords[i]);
       opt.html(tRecords[i]);
@@ -150,7 +150,7 @@ function choisirBD() {
     let tRecords = data.split("\n");
     // Définit la taille de la liste déroulante en fonction du nombre de tables
     $("#listeTable").attr("size", tRecords.length);
-    for (let i = 1; i < tRecords.length; i++) {
+    for (let i = 0; i < tRecords.length; i++) {
       // Crée une option pour chaque table disponible
       let opt = $("<option>");
       opt.val(tRecords[i]);
